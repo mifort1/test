@@ -10,12 +10,16 @@ class NewsController{
 
     public function actionAll(){
         $items = News::getAll();
-        include __DIR__.'/../views/news/all.php';
+        $view = new View();
+        $view->items = $items;
+        $view->display('news/all.php');
     }
 
     public function actionOne(){
         $id = $_GET['id'];
-        $items = News::getOne($id);
-        include __DIR__.'/../views/news/one.php';
+        $item = News::getOne($id);
+        $view = new View();
+        $view->item = $item;
+        $view->display('news/one.php');
     }
 }

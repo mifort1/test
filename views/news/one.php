@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?=$items->title?></title>
+    <title><?=$item->title?></title>
 </head>
 <body>
 <table border="1px solid black">
     <tr>
-        <th><?=$items->title?></th>
+        <th><?=$item->title?></th>
     </tr>
     <tr>
-        <td><?=$items->text?></td>
+        <td><?=$item->text?></td>
     </tr>
     <tr>
-        <td><?=$items->date?></td>
+        <td><?=$item->date?></td>
     </tr>
 </table>
 </body>

@@ -9,7 +9,7 @@
     <tr>
         <th>Название статьи</th>
     </tr>
-    <?php foreach($items as $new):?>
+    <?php foreach( $items as $new):?>
         <tr>
             <td><a href="new.php?id=<?=$new->id?>"><?=$new->title?></a></td>
         </tr>

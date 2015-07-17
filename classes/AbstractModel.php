@@ -6,7 +6,7 @@
  * Date: 17.07.2015
  * Time: 15:04
  */
-abstract class AbstractModel
+abstract class AbstractModel implements IModel
 {
     protected static $table;
     protected static $class;
