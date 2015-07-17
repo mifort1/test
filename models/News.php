@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Created by PhpStorm.
@@ -5,12 +6,21 @@
  * Date: 27.06.2015
  * Time: 10:35
  */
-require_once __DIR__.'/../functions/db.php';
-function News_getAll(){
-    $sql = "SELECT * FROM news ORDER BY date DESC";
-    return sql_query($sql);
+require_once __DIR__.'/../classes/DB.php';
+class News {
+    public  $id;
+    public $title;
+    public $text;
+    public $date;
+    public function GetAll(){
+        $db = new DB();
+        $sql = "SELECT * FROM news ORDER BY date DESC";
+        return $db->query($sql);
 
+    }
 }
+
+/*
 function New_insert($data){
     // build query...
     $sql  = "INSERT INTO news";
@@ -25,4 +35,4 @@ function New_insert($data){
 function Select_NewByPk($id){
     $sql = "SELECT * FROM news WHERE id = ".$id;
     return sql_query($sql);
-}
+}*/
