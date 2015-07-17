@@ -7,7 +7,6 @@
  */
 require __DIR__.'/models/News.php';
 
-$news = new News();
-$items = $news->GetAll();
+$items = News::GetAll();
 
 var_dump($items);

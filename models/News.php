@@ -12,7 +12,7 @@ class News {
     public $title;
     public $text;
     public $date;
-    public function GetAll(){
+    static public function GetAll(){
         $db = new DB();
         $sql = "SELECT * FROM news ORDER BY date DESC";
         return $db->query($sql);
