@@ -5,9 +5,15 @@
  * Date: 26.06.2015
  * Time: 15:21
  */
-require __DIR__.'/models/News.php';
+$ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'News';
+$act = isset($_GET['act']) ? $_GET['act'] : 'All';
 
-$items = News::GetAll();
+$controllerClassName = $ctrl.'Controller';
+
+require_once __DIR__.'/controllers/'.$controllerClassName.'.php';
+
+$controller = new $controllerClassName;
+$method = 'action'.$act;
+$controller->$method();
 
 
-include __DIR__.'/views/index.php';
