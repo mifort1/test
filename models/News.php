@@ -6,23 +6,14 @@
  * Date: 27.06.2015
  * Time: 10:35
  */
-class News {
+class News extends AbstractModel{
     public  $id;
     public $title;
     public $text;
     public $date;
 
-    public static function getAll(){
-        $db = new DB();
-        $sql = "SELECT * FROM news ORDER BY date DESC";
-        return $db->queryAll($sql, 'News');
-
-    }
-    public static function getOne($id){
-        $db = new DB();
-        $sql = 'SELECT * FROM news WHERE id = '.$id;
-        return $db->queryOne($sql, 'News');
-    }
+    protected static $table = 'news';
+    protected static $class = 'News';
 
 }
 
