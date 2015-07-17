@@ -6,23 +6,29 @@
  * Date: 27.06.2015
  * Time: 10:35
  */
-require_once __DIR__.'/../classes/DB.php';
 class News {
     public  $id;
     public $title;
     public $text;
     public $date;
-    public static function GetAll(){
+
+    public static function getAll(){
         $db = new DB();
         $sql = "SELECT * FROM news ORDER BY date DESC";
-        return $db->query($sql, 'News');
+        return $db->queryAll($sql, 'News');
 
     }
+    public static function getOne($id){
+        $db = new DB();
+        $sql = 'SELECT * FROM news WHERE id = '.$id;
+        return $db->queryOne($sql, 'News');
+    }
+
 }
 
 /*
 function New_insert($data){
-    // build query...
+    // build queryAll...
     $sql  = "INSERT INTO news";
 
     // implode keys of $array...

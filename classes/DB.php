@@ -10,7 +10,7 @@ class DB {
         mysql_connect('localhost', 'root', '');
         mysql_select_db('test');
     }
-    public  function  query($sql, $class = 'stdClass'){
+    public  function  queryAll($sql, $class = 'stdClass'){
         $res =  mysql_query($sql);
         if(false === $res){
             return false;
@@ -20,6 +20,9 @@ class DB {
             $arr[] = $row;
         }
         return $arr;
+    }
+    public function queryOne($sql, $class = 'stdClass'){
+        return $this->queryAll($sql, $class = 'stdClass')[0];
     }
     /*public function sql_exec($sql){
         if(mysql_query($sql))
