@@ -10,13 +10,13 @@ class DB {
         mysql_connect('localhost', 'root', '');
         mysql_select_db('test');
     }
-    public  function  query($sql){
+    public  function  query($sql, $class = 'stdClass'){
         $res =  mysql_query($sql);
         if(false === $res){
             return false;
         }
         $arr = [];
-        while($row = mysql_fetch_object($res)){
+        while($row = mysql_fetch_object($res, $class)){
             $arr[] = $row;
         }
         return $arr;

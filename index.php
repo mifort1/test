@@ -9,4 +9,5 @@ require __DIR__.'/models/News.php';
 
 $items = News::GetAll();
 
-var_dump($items);
+
+include __DIR__.'/views/index.php';
