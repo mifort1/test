@@ -18,8 +18,13 @@ class DB {
     public function query($sql, $params = []){
         $sth = $this->dbh->prepare($sql);
         $sth->execute($params);
-        return $sth->fetchAll(PDO::FETCH_CLASS, $this->className);
+        return $sth->fetchAll(PDO::FETCH_CLASS, $this->className)[0];
 
+    }
+
+    public function execute($sql, $params = []){
+        $sth = $this->dbh->prepare($sql);
+        return $sth->execute($params);
     }
 }
 
