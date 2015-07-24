@@ -9,14 +9,10 @@
 class NewsController{
 
     public function actionAll(){
-        $db = new DB();
-        $res = $db->query(
-            'SELECT * FROM news WHERE id = :id',
-            [':id'=>3]
-        );
+       $res = NewsModel::findAll();
         var_dump($res);
         die;
-        /*$items = News::getAll();
+        /*$items = News::findAll();
         $view = new View();
         $view->items = $items;
         $view->display('news/all.php');*/

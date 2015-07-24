@@ -10,27 +10,17 @@ abstract class AbstractModel
 {
     protected static  $table;
 
-    public static function getTable(){
-        return static::$table;
-    }
 
-
-
-   /* protected static $table;
-    protected static $class;
-
-    public static function getAll(){
+    public static function findAll(){
+        $class = get_called_class();
+        $sql= 'SELECT * FROM '.static::$table;
         $db = new DB();
-        $sql = 'SELECT * FROM '.static::$table.' ORDER BY date DESC';
-        return $db->queryAll($sql, static::$class);
-
+        $db->setClassName($class);
+        return $db->query($sql);
     }
-
-    public static function getOne($id){
+    public static function   findOneByPk($id){
+        $sql= 'SELECT * FROM '.static::$table. ' WHERE id = :id';
         $db = new DB();
-        $sql = 'SELECT * FROM '.static::$table.' WHERE id = '.$id;
-        return $db->queryOne($sql, static::$class);
+        return $db->query($sql,[':id'=>$id]);
     }
-
-*/
 }
