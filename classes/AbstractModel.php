@@ -6,9 +6,17 @@
  * Date: 17.07.2015
  * Time: 15:04
  */
-abstract class AbstractModel implements IModel
+abstract class AbstractModel
 {
-    protected static $table;
+    protected static  $table;
+
+    public static function getTable(){
+        return static::$table;
+    }
+
+
+
+   /* protected static $table;
     protected static $class;
 
     public static function getAll(){
@@ -24,5 +32,5 @@ abstract class AbstractModel implements IModel
         return $db->queryOne($sql, static::$class);
     }
 
-
+*/
 }

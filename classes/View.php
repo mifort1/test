@@ -6,8 +6,8 @@
  * Date: 17.07.2015
  * Time: 15:49
  */
-class View implements
-    Iterator
+class View
+    implements Iterator
 {
     const PATH = __DIR__.'/../views/';
     protected $data = [];
