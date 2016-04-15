@@ -26,3 +26,4 @@ class NewsModel
     public $date;
    */
 }
+///////
