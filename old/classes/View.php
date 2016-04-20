@@ -9,7 +9,7 @@
 class View
     implements Iterator
 {
-    const PATH = __DIR__.'/../views/';
+    const PATH = __DIR__ . '/../views/';
     protected $data = [];
 
     public  function __set($k,$v){
