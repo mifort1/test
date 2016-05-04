@@ -7,6 +7,5 @@
  */
 require_once __DIR__.'/autoload.php';
 
-$obj = new \App\Db();
-$res = $obj->query('SELECT * FROM foo');
-var_dump($res);
+$user = \App\Models\User::findAll();
+var_dump($user);
