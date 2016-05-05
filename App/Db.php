@@ -19,9 +19,9 @@ class Db
     {
         $this->dbh = new \PDO($this->dsn, $this->user, $this->password);
     }
-    public function execute($sql){
+    public function execute($sql, $params = []){
         $sth = $this->dbh->prepare($sql);
-        $res = $sth->execute();
+        $res = $sth->execute($params);
         return $res;
     }
     public function query($sql, $class){

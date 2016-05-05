@@ -14,7 +14,7 @@ use App\Model;
 class User extends Model
 {
     const TABLE = 'users';
-    public $user;
+    public $name;
     public $email;
 
 }

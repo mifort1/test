@@ -8,5 +8,7 @@
 require_once __DIR__.'/autoload.php';
 require_once __DIR__.'/test.php';
 
-$user = \App\Models\User::findAll();
-var_dump($user);
+$user = new \App\Models\User();
+$user->name = 'Vasya';
+$user->email = 'Vasya@ukr.net';
+//$user->insert();
