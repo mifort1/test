@@ -6,7 +6,8 @@
  * Time: 11:20
  */
 namespace App;
-class Db
+
+class Db extends Singleton
 {
 
     private $dsn = 'mysql:dbname=test;host=127.0.0.1';
@@ -14,7 +15,7 @@ class Db
     private $password = '1';
     protected $dbh;
 
-    public function __construct()
+    protected function __construct()
     {
         $this->dbh = new \PDO($this->dsn, $this->user, $this->password);
     }
