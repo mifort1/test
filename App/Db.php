@@ -7,9 +7,9 @@
  */
 namespace App;
 
-class Db extends Singleton
+class Db
 {
-
+    use Singleton;
     private $dsn = 'mysql:dbname=test;host=127.0.0.1';
     private $user = 'root';
     private $password = '1';
