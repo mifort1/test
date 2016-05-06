@@ -5,10 +5,14 @@
  * Date: 20.04.2016
  * Time: 11:05
  */
+include __DIR__.'/App/templates/index.php';
+
 require_once __DIR__.'/autoload.php';
 require_once __DIR__.'/test.php';
 
-$user = new \App\Models\User();
+
+/*$user = new \App\Models\User();
 $user->name = 'Vasya';
 $user->email = 'Vasya@ukr.net';
-//$user->insert();
+var_dump($user->findAll());
+die;*/
