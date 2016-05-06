@@ -5,10 +5,12 @@
  * Date: 20.04.2016
  * Time: 11:05
  */
-include __DIR__.'/App/templates/index.php';
-
 require_once __DIR__.'/autoload.php';
-require_once __DIR__.'/test.php';
+
+$obg = new \App\View();
+$obg->users = \App\Models\User::findAll();
+$obg->display(__DIR__.'/App/templates/index.php');
+
 
 
 /*$user = new \App\Models\User();
