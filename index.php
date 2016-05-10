@@ -8,8 +8,8 @@
 require_once __DIR__.'/autoload.php';
 
 $obg = new \App\View();
-$obg->authors = \App\Models\Article::findAll();
-echo $obg->render(__DIR__.'/App/templates/index.php');
+$authors = \App\Models\Article::findAll();
+var_dump($authors[4]->author);
 
 
 
