@@ -9,17 +9,28 @@
 namespace App;
 
 
-class View
+class View implements \Countable
 {
     protected $data = [];
+    protected $_myCount = 3;
     public function __set($k, $v)
     {
         $this->data[$k] = $v;
-
     }
     public function __get($k)
     {
         return $this->data[$k];
+    }
+    public function __isset($k)
+    {
+        return isset($this->data[$k]);
+
+    }
+    public function count()
+    {
+        // TODO: Implement count() method.
+        return count($this->data);
+
     }
 
     /**
@@ -35,6 +46,9 @@ class View
      */
     public function render($template){
         ob_start();
+        foreach($this->data as $prop=>$value){
+            $$prop = $value;
+        }
         include $template;
         $content = ob_get_contents();
         ob_end_clean();
