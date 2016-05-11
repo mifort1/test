@@ -18,15 +18,24 @@
     <![endif]-->
 </head>
 <body>
-<h1>ПОЛЬЗОВАТЕЛИ</h1>
-<?php foreach ($users as $user): ?>
+<h1>Все новости</h1>
+<?php foreach ($news as $article): ?>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <?php echo $user->name;?>
+            <?php echo $article->title;?>
         </div>
         <div class="panel-body">
-            <?php echo $user->email;?>
+            <?php echo $article->lead;?>
         </div>
+        <?php if(!empty($article->author)):?>
+        <div class="panel-body">
+            Автор: <?php echo $article->author->name;?>
+        </div>
+        <?php else: ?>
+            <div class="panel-body">
+                Автор отсутствует!
+            </div>
+        <?php endif; ?>
     </div>
 <?php endforeach; ?>
 

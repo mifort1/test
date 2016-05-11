@@ -24,7 +24,12 @@ abstract class Model
     {
         $db = Db::instance();
 
-        return $db->query('SELECT * FROM ' . static::TABLE. ' WHERE id = :id',[':id'=>$id], static::class);
+        $res = $db->query('SELECT * FROM ' . static::TABLE. ' WHERE id = :id',[':id'=>$id], static::class);
+        if(!empty($res[0])){
+            return $res[0];
+        }
+        else
+            return NULL;
     }
 
     public function isNew()
