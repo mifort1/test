@@ -32,4 +32,11 @@ class News
         $this->view->title = 'Все новости';
         $this->view->display(__DIR__.'/../templates/index.php');
     }
+
+    protected function actionOne(){
+        $id = (int)$_GET['id'];
+        $this->view->article = \App\Models\Article::findById($id);
+        $this->view->title = 'Одна новость!';
+        $this->view->display(__DIR__.'/../templates/one.php');
+    }
 }

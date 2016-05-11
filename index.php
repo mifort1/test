@@ -9,7 +9,8 @@
 require_once __DIR__.'/autoload.php';
 
 $controller = new \App\Controllers\News();
-$controller->action('index');
+$action = !empty($_GET['action']) ? $_GET['action'] : 'Index';
+$controller->action($action);
 
 
 
