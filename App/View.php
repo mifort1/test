@@ -37,7 +37,7 @@ class View implements \Countable
      * @param $template путь к шаблону
      */
     public function display($template){
-        $this->render($template);
+        echo $this->render($template);
     }
 
     /**
