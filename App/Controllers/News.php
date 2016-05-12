@@ -16,12 +16,14 @@ class News extends Controller
 {
    
     protected function actionIndex(){
-        $this->view->title = 'Все новости';
         parent::actionIndex();
+        $this->view->title = 'Все новости';
+        $this->view->display(__DIR__.'/../templates/index.php');
     }
 
     protected function actionOne(){
-        $this->view->title = 'Одна новость!';
         parent::actionOne();
+        $this->view->title = 'Одна новость!';
+        $this->view->display(__DIR__.'/../templates/one.php');
     }
 }
