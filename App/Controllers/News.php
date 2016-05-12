@@ -9,34 +9,19 @@
 namespace App\Controllers;
 
 
-use App\View;
 
-class News
+use App\Controller;
+
+class News extends Controller
 {
-    protected $view;
-
-    public function __construct()
-    {
-        $this->view = new View();
-    }
-    public function action($action){
-        $this->beforeAction();
-        $methodName = 'action'.$action;
-        return $this->$methodName();
-    }
-    protected function beforeAction(){
-        $a = 1;
-    }
+   
     protected function actionIndex(){
-        $this->view->news = \App\Models\Article::findAll();
         $this->view->title = 'Все новости';
-        $this->view->display(__DIR__.'/../templates/index.php');
+        parent::actionIndex();
     }
 
     protected function actionOne(){
-        $id = (int)$_GET['id'];
-        $this->view->article = \App\Models\Article::findById($id);
         $this->view->title = 'Одна новость!';
-        $this->view->display(__DIR__.'/../templates/one.php');
+        parent::actionOne();
     }
 }
