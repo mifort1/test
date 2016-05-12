@@ -7,5 +7,7 @@
  */
 use \App\Singleton;
 
+echo 555;
+
 /*$obj = Singleton::instance();
 var_dump($obj);*/
