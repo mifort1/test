@@ -21,7 +21,24 @@ $f = function($k){
         break;
     }
 };
-echo $f('val')(10);
+
+$cv = function(){
+    $h = [];
+    $h[] = 'vvv';
+  return $h;
+};
+$d = function(){
+    return [
+      'a'=>function($v){
+              return $v*2;
+      },
+        'b'=>function($v){
+              return $v*3;
+      }
+    ];
+};
+//var_dump($d());
+echo $d()['b'](8);
 
 
 /*$obj = Singleton::instance();
