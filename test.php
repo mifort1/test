@@ -7,6 +7,8 @@
  */
 use \App\Singleton;
 
+
+// анонимные функции
 $f = function($k){
     switch ($k){
         case 'name':
@@ -21,7 +23,7 @@ $f = function($k){
         break;
     }
 };
-
+//echo $f('name')(8); // вывод 24
 $cv = function(){
     $h = [];
     $h[] = 'vvv';
@@ -37,8 +39,18 @@ $d = function(){
       }
     ];
 };
-//var_dump($d());
-echo $d()['b'](8);
+//echo $d()['b'](9); //вывод 27
+
+
+
+
+
+// замыкание
+$param = 5;
+$o = function($n) use ($param){
+    return $n*$param;
+};
+echo $o(40); //вывод 200
 
 
 /*$obj = Singleton::instance();
