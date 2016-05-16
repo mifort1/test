@@ -50,8 +50,29 @@ $param = 5;
 $o = function($n) use ($param){
     return $n*$param;
 };
-echo $o(40); //вывод 200
+//echo $o(40); //вывод 200
 
 
-/*$obj = Singleton::instance();
-var_dump($obj);*/
+$a = 3;
+$b = 5;
+$c = function(){
+    global $a, $b;
+    $a= 6;
+    $b= 7;
+    return $a*$b;
+};
+//echo $c();
+
+//Статические переменные и рекурсивные функции
+function test()
+{
+    static $count = 0;
+
+    $count++;
+    echo $count;
+    if ($count < 10) {
+        test();
+    }
+    $count--;
+}
+test();
