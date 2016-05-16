@@ -7,7 +7,22 @@
  */
 use \App\Singleton;
 
-echo 555;
+$f = function($k){
+    switch ($k){
+        case 'name':
+            return function($v){
+                return $v*3;
+            };
+        break;
+        case 'val':
+            return function($j){
+                return $j*4;
+            };
+        break;
+    }
+};
+echo $f('val')(10);
+
 
 /*$obj = Singleton::instance();
 var_dump($obj);*/
