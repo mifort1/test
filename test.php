@@ -75,4 +75,14 @@ function test()
     }
     $count--;
 }
-test();
+//test();
+//генератор
+function reg(){
+    for ($i=0;$i<=20;$i++){
+        yield $i;
+    }
+}
+foreach (reg() as $k=>$val){
+    echo $k.'=>'.$val;
+    echo '<br>';
+}
