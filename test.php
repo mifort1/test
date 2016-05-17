@@ -1,4 +1,5 @@
 <?php
+//error_reporting(E_ALL & ~E_NOTICE);
 /**
  * Created by PhpStorm.
  * User: mifort
@@ -82,10 +83,10 @@ function reg(){
         yield $i;
     }
 }
-foreach (reg() as $k=>$val){
+/*foreach (reg() as $k=>$val){
     echo $k.'=>'.$val;
     echo '<br>';
-}
+}*/
 // функции с переменным количеством параметров ($x - не обязателен)
 function sum($x,...$arr){
     return $x+array_sum($arr);
@@ -97,4 +98,14 @@ function sam(...$a){
     return array_sum($a);
 }
 $arr = array(10,20,30,40,5);
-echo sam(...$arr);
+//echo sam(...$arr);
+//$x = null;
+$y = 123;
+//$v = $x ?: $y; // если $x true
+$v = $x ?? $y; // если $x существует
+//var_dump($v);
+// константы
+const TER = 6*2;
+const ASSD = TER.'55555';
+define("JJJJJ", 'ssss');
+var_dump(ASSD);
