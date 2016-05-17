@@ -86,3 +86,8 @@ foreach (reg() as $k=>$val){
     echo $k.'=>'.$val;
     echo '<br>';
 }
+// функция с переменным количеством параметров ($x - не обязателен)
+function sum($x,...$arr){
+    return $x+array_sum($arr);
+}
+echo sum(1,2,3,4);
