@@ -209,6 +209,14 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
+<?php
+/*$res = fopen(__DIR__.'/file.txt', 'a');
+$str = 'hello, world!';
+$str = fwrite($res, $str);
+fclose($res);*/
+readfile(__DIR__.'/file.txt');
+die;
+?>
 <form name="myform" method="post">
     <input name="first" type="text" value="<?php echo isset($first) ? $first : ''; ?>">
     <select name="sel">

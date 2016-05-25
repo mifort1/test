@@ -27,9 +27,9 @@ if(isset($_POST['submit']) && !empty($_POST['login']) && !empty($_POST['password
 
 // проверка наличия сесии или куки
 if(getCookOrSession()){
-    header("Location: hello.php");
+    header("Location: /hello.php");
     exit;
 }
-header("Location: form.php");
+header("Location: /form.php");
 exit;
 

@@ -8,7 +8,7 @@
 require_once ('functions.php');
 session_start();
 if(!issetSession()){
-    header("Location: form.php");
+    header("Location: /login.php");
     exit;
 }
 ?>
@@ -20,6 +20,7 @@ if(!issetSession()){
 </head>
 <body>
 <H1> Привет, <?php echo $_SESSION['login']; ?></H1>
+<a href="file.php">Файл</a>
 <a href="unset.php">Выйти</a>
 </body>
 </html>

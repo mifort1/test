@@ -41,3 +41,18 @@ function getCookOrSession(){
             return true;
     }
 }
+// проверка наличия файла
+function issetFile($name)
+{
+    $uploadName = 'file/';
+    while (is_file($uploadName . $name)) {
+        $i = (int)$name;
+        $k = $i + 1;
+        if (0 == $i) {
+            $name = $k . '_' . $name;
+        } else {
+            $name = str_replace($i, $k, $name);
+        }
+    }
+    return $uploadName . $name;
+}

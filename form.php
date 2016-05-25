@@ -1,7 +1,7 @@
 <?php session_start();
 require_once('functions.php'); 
 if (issetSession()) {
-header("Location: hello.php");
+header("Location: /hello.php");
 exit;
 } ?>
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ exit;
 </head>
 <body>
 <?php echo $_SESSION['err'] ?? ''; unset($_SESSION['err']);?>
-<form action="login.php" method="post">
+<form action="/login.php" method="post">
     <label>Login</label>
     <input type="text" name="login">
     <br>
