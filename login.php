@@ -5,6 +5,7 @@
  * Date: 19.05.16
  * Time: 13:55
  */
+error_reporting(E_ALL);
 require_once ('functions.php');
 session_start();
 // проверка на наличие в бд
@@ -24,7 +25,6 @@ if(isset($_POST['submit']) && !empty($_POST['login']) && !empty($_POST['password
         $_SESSION['err'] = 'Ошибка авторизации';
     }
 }
-
 // проверка наличия сесии или куки
 if(getCookOrSession()){
     header("Location: /hello.php");

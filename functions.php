@@ -38,7 +38,7 @@ function getCookOrSession(){
             $_SESSION['login']  = $_COOKIE['auth'];
             return true;
         default:
-            return true;
+            return false;
     }
 }
 // проверка наличия файла

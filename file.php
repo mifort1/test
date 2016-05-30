@@ -6,7 +6,7 @@
  * Time: 10:38
  */
 echo $_SERVER['SERVER_NAME'];
-require_once __DIR__.'functions.php';
+require_once __DIR__.'/functions.php';
 session_start();
 if (!issetSession()) {
     header("Location: /login.php");

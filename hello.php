@@ -7,6 +7,7 @@
  */
 require_once ('functions.php');
 session_start();
+//var_dump(issetSession()); die;
 if(!issetSession()){
     header("Location: /login.php");
     exit;

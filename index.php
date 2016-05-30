@@ -6,6 +6,7 @@
  * Time: 11:05
  */
 //error_reporting(E_ALL & ~E_NOTICE);
+error_reporting(E_ALL);
 
 require_once __DIR__.'/autoload.php';
 
