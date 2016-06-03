@@ -7,4 +7,3 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l
 RewriteRule ^(.*)$ index.php [L,QSA]
 
-php_value upload_max_filesize 1M
