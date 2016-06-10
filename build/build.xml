@@ -5,6 +5,7 @@
         <resolvepath propertyName="target.dir" path="/home/mifort/www/wordp.loc/"/>
         <echo msg="Project BaseDir: ${project.basedir}" />
         <echo msg="Target Dir: ${target.dir}" />
+        <echo msg="Domain Name: ${env.py}" />
     </target>
     <target name="copy">
         <copy todir="${target.dir}">
@@ -13,8 +14,25 @@
             </fileset>
         </copy>
     </target>
+    <target name="config">
+        <copy file="${project.basedir}/build/config.php" tofile="${target.dir}/config/config.php" overwrite="true">
+            <filterchain>
+                <replacetokens begintoken="{{" endtoken="}}">
+                    <token key="db.user" value="${dbuser}" />
+                    <token key="db.password" value="${dbpassword}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+    </target>
+    <target name="migrate">
+        <exec command="php t4-app-mini/protected/t4.php /migrate" dir="${target.dir}" checkreturn="true" passthru="true" error="stdout"/>
+    </target>
     <target name="composer">
         <exec dir="${target.dir}" command="composer install" checkreturn="true" />
     </target>
-    <target name="build" depends="vars, copy, composer"></target>
+    <target name="build" depends="vars, copy, config, composer, migrate"></target>
 </project>
+
+
+
+
